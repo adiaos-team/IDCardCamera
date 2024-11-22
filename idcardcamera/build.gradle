@@ -1,5 +1,7 @@
-apply plugin: 'com.android.library'
-
+plugins{
+    id 'com.android.library'
+    id 'maven-publish'
+}
 android {
     compileSdkVersion 28
 
@@ -27,4 +29,27 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation "com.squareup.okhttp3:okhttp:3.12.1"
+}
+afterEvaluate {
+    publishing {
+        publications {
+            group = 'com.pengbo.idcardcamera'
+            version = '2.2.3'
+            //发布release版本
+            release(MavenPublication) {
+                // Applies the component for the release build variant.
+                from components.release
+                //groupId通常是自己的gitee或者GitHub的账户地址
+                groupId = group
+                //artifactId通常是指待发布项目的名称，也就是别名
+                artifactId = 'IDCardCameraNew'
+                //version通常是指待发布项目的版本号，这里是写死的，通常我们取项目versionName
+                version =version
+            }
+        }
+    }
+}
+task generateSourcesJar(type: Jar){
+    from android.sourceSets.main.java.srcDirs
+    classifier  'sources'
 }
