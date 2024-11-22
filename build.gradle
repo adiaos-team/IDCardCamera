@@ -4,8 +4,13 @@ ext {
 
 buildscript {
     repositories {
-        jcenter()
         google()
+        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin/' }
+        maven { url 'https://www.jitpack.io' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
@@ -16,9 +21,12 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
         google()
-        maven { url 'https://jitpack.io' }
+        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin/' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
     }
 }
 
