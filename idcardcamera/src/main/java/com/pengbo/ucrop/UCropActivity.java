@@ -152,7 +152,7 @@ public class UCropActivity extends AppCompatActivity {
 
 
     private void initiateViews(Intent intent) {
-        mUCropView = findViewById(R.id.ucrop);
+        mUCropView = findViewById(R.id.ucrop_1);
         mOverlayView = mUCropView.getOverlayView();
 
         mGestureCropImageView = mUCropView.getCropImageView();

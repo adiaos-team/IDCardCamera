@@ -268,7 +268,7 @@ public class UCropFragment extends Fragment {
     }
 
     private void initiateRootViews(View view) {
-        mUCropView = view.findViewById(R.id.ucrop);
+        mUCropView = view.findViewById(R.id.ucrop_1);
         mGestureCropImageView = mUCropView.getCropImageView();
         mOverlayView = mUCropView.getOverlayView();
 
@@ -371,7 +371,7 @@ public class UCropFragment extends Fragment {
 
     private void setupRotateWidget(View view) {
         mTextViewRotateAngle = view.findViewById(R.id.text_view_rotate);
-        ((HorizontalProgressWheelView) view.findViewById(R.id.rotate_scroll_wheel))
+        ((HorizontalProgressWheelView) view.findViewById(R.id.rotate_scroll_wheel_1))
                 .setScrollingListener(new HorizontalProgressWheelView.ScrollingListener() {
                     @Override
                     public void onScroll(float delta, float totalDistance) {
@@ -389,7 +389,7 @@ public class UCropFragment extends Fragment {
                     }
                 });
 
-        ((HorizontalProgressWheelView) view.findViewById(R.id.rotate_scroll_wheel)).setMiddleLineColor(mActiveControlsWidgetColor);
+        ((HorizontalProgressWheelView) view.findViewById(R.id.rotate_scroll_wheel_1)).setMiddleLineColor(mActiveControlsWidgetColor);
 
 
         view.findViewById(R.id.wrapper_reset_rotate).setOnClickListener(new View.OnClickListener() {
@@ -409,7 +409,7 @@ public class UCropFragment extends Fragment {
 
     private void setupScaleWidget(View view) {
         mTextViewScalePercent = view.findViewById(R.id.text_view_scale);
-        ((HorizontalProgressWheelView) view.findViewById(R.id.scale_scroll_wheel))
+        ((HorizontalProgressWheelView) view.findViewById(R.id.scale_scroll_wheel_1))
                 .setScrollingListener(new HorizontalProgressWheelView.ScrollingListener() {
                     @Override
                     public void onScroll(float delta, float totalDistance) {
@@ -432,7 +432,7 @@ public class UCropFragment extends Fragment {
                         mGestureCropImageView.cancelAllAnimations();
                     }
                 });
-        ((HorizontalProgressWheelView) view.findViewById(R.id.scale_scroll_wheel)).setMiddleLineColor(mActiveControlsWidgetColor);
+        ((HorizontalProgressWheelView) view.findViewById(R.id.scale_scroll_wheel_1)).setMiddleLineColor(mActiveControlsWidgetColor);
 
         setScaleTextColor(mActiveControlsWidgetColor);
     }
