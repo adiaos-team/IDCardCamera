@@ -33,7 +33,7 @@ import java.lang.annotation.RetentionPolicy;
  * This view is used for drawing the overlay on top of the image. It may have frame, crop guidelines and dimmed area.
  * This must have LAYER_TYPE_SOFTWARE to draw itself properly.
  */
-public class OverlayViewNew extends View {
+public class OverlayView extends View {
 
     public static final int FREESTYLE_CROP_MODE_DISABLE = 0;
     public static final int FREESTYLE_CROP_MODE_ENABLE = 1;
@@ -83,15 +83,15 @@ public class OverlayViewNew extends View {
         mCropRectCornerTouchAreaLineLength = getResources().getDimensionPixelSize(R.dimen.ucrop_default_crop_rect_corner_touch_area_line_length);
     }
 
-    public OverlayViewNew(Context context) {
+    public OverlayView(Context context) {
         this(context, null);
     }
 
-    public OverlayViewNew(Context context, AttributeSet attrs) {
+    public OverlayView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public OverlayViewNew(Context context, AttributeSet attrs, int defStyle) {
+    public OverlayView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
     }

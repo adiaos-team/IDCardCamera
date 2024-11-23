@@ -11,7 +11,7 @@ import com.pengbo.ucrop.util.RotationGestureDetector;
 /**
  * Created by Oleksii Shliama (https://github.com/shliama).
  */
-public class GestureCropImageViewNew extends CropImageView {
+public class GestureCropImageView extends CropImageView {
 
     private static final int DOUBLE_TAP_ZOOM_DURATION = 200;
 
@@ -24,15 +24,15 @@ public class GestureCropImageViewNew extends CropImageView {
     private boolean mIsRotateEnabled = true, mIsScaleEnabled = true;
     private int mDoubleTapScaleSteps = 5;
 
-    public GestureCropImageViewNew(Context context) {
+    public GestureCropImageView(Context context) {
         super(context);
     }
 
-    public GestureCropImageViewNew(Context context, AttributeSet attrs) {
+    public GestureCropImageView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public GestureCropImageViewNew(Context context, AttributeSet attrs, int defStyle) {
+    public GestureCropImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
