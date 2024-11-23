@@ -15,8 +15,8 @@ import com.pengbo.ucrop.callback.OverlayViewChangeListener;
 
 public class UCropView extends FrameLayout {
 
-    private GestureCropImageView mGestureCropImageView;
-    private final OverlayView mViewOverlay;
+    private GestureCropImageViewNew mGestureCropImageView;
+    private final OverlayViewNew mViewOverlay;
 
     public UCropView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -59,12 +59,12 @@ public class UCropView extends FrameLayout {
     }
 
     @NonNull
-    public GestureCropImageView getCropImageView() {
+    public GestureCropImageViewNew getCropImageView() {
         return mGestureCropImageView;
     }
 
     @NonNull
-    public OverlayView getOverlayView() {
+    public OverlayViewNew getOverlayView() {
         return mViewOverlay;
     }
 
@@ -74,7 +74,7 @@ public class UCropView extends FrameLayout {
      */
     public void resetCropImageView() {
         removeView(mGestureCropImageView);
-        mGestureCropImageView = new GestureCropImageView(getContext());
+        mGestureCropImageView = new GestureCropImageViewNew(getContext());
         setListenersToViews();
         mGestureCropImageView.setCropRect(getOverlayView().getCropViewRect());
         addView(mGestureCropImageView, 0);

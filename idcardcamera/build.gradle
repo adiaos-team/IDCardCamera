@@ -34,7 +34,7 @@ afterEvaluate {
     publishing {
         publications {
             group = 'com.pengbo.idcardcamera'
-            version = '2.2.3'
+            version = '2.2.4'
             //发布release版本
             release(MavenPublication) {
                 // Applies the component for the release build variant.

@@ -17,10 +17,10 @@ import android.widget.RelativeLayout;
 import com.pengbo.idcardcamera.R;
 import com.pengbo.ucrop.callback.BitmapCropCallback;
 import com.pengbo.ucrop.view.CropImageView;
+import com.pengbo.ucrop.view.OverlayViewNew;
 import com.pengbo.ucrop.view.TransformImageView;
 import com.pengbo.ucrop.model.AspectRatio;
-import com.pengbo.ucrop.view.GestureCropImageView;
-import com.pengbo.ucrop.view.OverlayView;
+import com.pengbo.ucrop.view.GestureCropImageViewNew;
 import com.pengbo.ucrop.view.UCropView;
 
 import java.lang.annotation.Retention;
@@ -51,8 +51,8 @@ public class UCropActivity extends AppCompatActivity {
 
     private static final String TAG = "UCropActivity";
     private UCropView mUCropView;
-    private GestureCropImageView mGestureCropImageView;
-    private OverlayView mOverlayView;
+    private GestureCropImageViewNew mGestureCropImageView;
+    private OverlayViewNew mOverlayView;
     private View mBlockingView;
 
 

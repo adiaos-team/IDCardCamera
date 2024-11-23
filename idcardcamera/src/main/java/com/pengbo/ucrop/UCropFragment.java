@@ -35,8 +35,8 @@ import com.pengbo.ucrop.callback.BitmapCropCallback;
 import com.pengbo.ucrop.model.AspectRatio;
 import com.pengbo.ucrop.util.SelectedStateListDrawable;
 import com.pengbo.ucrop.view.CropImageView;
-import com.pengbo.ucrop.view.GestureCropImageView;
-import com.pengbo.ucrop.view.OverlayView;
+import com.pengbo.ucrop.view.GestureCropImageViewNew;
+import com.pengbo.ucrop.view.OverlayViewNew;
 import com.pengbo.ucrop.view.TransformImageView;
 import com.pengbo.ucrop.view.UCropView;
 import com.pengbo.ucrop.view.widget.AspectRatioTextView;
@@ -85,8 +85,8 @@ public class UCropFragment extends Fragment {
     private Transition mControlsTransition;
 
     private UCropView mUCropView;
-    private GestureCropImageView mGestureCropImageView;
-    private OverlayView mOverlayView;
+    private GestureCropImageViewNew mGestureCropImageView;
+    private OverlayViewNew mOverlayView;
     private ViewGroup mWrapperStateAspectRatio, mWrapperStateRotate, mWrapperStateScale;
     private ViewGroup mLayoutAspectRatio, mLayoutRotate, mLayoutScale;
     private List<ViewGroup> mCropAspectRatioViews = new ArrayList<>();
@@ -197,7 +197,7 @@ public class UCropFragment extends Fragment {
 
     /**
      * This method extracts {@link UCrop.Options #optionsBundle} from incoming bundle
-     * and setups fragment, {@link OverlayView} and {@link CropImageView} properly.
+     * and setups fragment, {@link OverlayViewNew} and {@link CropImageView} properly.
      */
     @SuppressWarnings("deprecation")
     private void processOptions(@NonNull Bundle bundle) {
@@ -223,18 +223,18 @@ public class UCropFragment extends Fragment {
         mGestureCropImageView.setImageToWrapCropBoundsAnimDuration(bundle.getInt(UCrop.Options.EXTRA_IMAGE_TO_CROP_BOUNDS_ANIM_DURATION, CropImageView.DEFAULT_IMAGE_TO_CROP_BOUNDS_ANIM_DURATION));
 
         // Overlay view options
-        mOverlayView.setFreestyleCropEnabled(bundle.getBoolean(UCrop.Options.EXTRA_FREE_STYLE_CROP, OverlayView.DEFAULT_FREESTYLE_CROP_MODE != OverlayView.FREESTYLE_CROP_MODE_DISABLE));
+        mOverlayView.setFreestyleCropEnabled(bundle.getBoolean(UCrop.Options.EXTRA_FREE_STYLE_CROP, OverlayViewNew.DEFAULT_FREESTYLE_CROP_MODE != OverlayViewNew.FREESTYLE_CROP_MODE_DISABLE));
 
         mOverlayView.setDimmedColor(bundle.getInt(UCrop.Options.EXTRA_DIMMED_LAYER_COLOR, getResources().getColor(R.color.ucrop_color_default_dimmed)));
-        mOverlayView.setCircleDimmedLayer(bundle.getBoolean(UCrop.Options.EXTRA_CIRCLE_DIMMED_LAYER, OverlayView.DEFAULT_CIRCLE_DIMMED_LAYER));
+        mOverlayView.setCircleDimmedLayer(bundle.getBoolean(UCrop.Options.EXTRA_CIRCLE_DIMMED_LAYER, OverlayViewNew.DEFAULT_CIRCLE_DIMMED_LAYER));
 
-        mOverlayView.setShowCropFrame(bundle.getBoolean(UCrop.Options.EXTRA_SHOW_CROP_FRAME, OverlayView.DEFAULT_SHOW_CROP_FRAME));
+        mOverlayView.setShowCropFrame(bundle.getBoolean(UCrop.Options.EXTRA_SHOW_CROP_FRAME, OverlayViewNew.DEFAULT_SHOW_CROP_FRAME));
         mOverlayView.setCropFrameColor(bundle.getInt(UCrop.Options.EXTRA_CROP_FRAME_COLOR, getResources().getColor(R.color.ucrop_color_default_crop_frame)));
         mOverlayView.setCropFrameStrokeWidth(bundle.getInt(UCrop.Options.EXTRA_CROP_FRAME_STROKE_WIDTH, getResources().getDimensionPixelSize(R.dimen.ucrop_default_crop_frame_stoke_width)));
 
-        mOverlayView.setShowCropGrid(bundle.getBoolean(UCrop.Options.EXTRA_SHOW_CROP_GRID, OverlayView.DEFAULT_SHOW_CROP_GRID));
-        mOverlayView.setCropGridRowCount(bundle.getInt(UCrop.Options.EXTRA_CROP_GRID_ROW_COUNT, OverlayView.DEFAULT_CROP_GRID_ROW_COUNT));
-        mOverlayView.setCropGridColumnCount(bundle.getInt(UCrop.Options.EXTRA_CROP_GRID_COLUMN_COUNT, OverlayView.DEFAULT_CROP_GRID_COLUMN_COUNT));
+        mOverlayView.setShowCropGrid(bundle.getBoolean(UCrop.Options.EXTRA_SHOW_CROP_GRID, OverlayViewNew.DEFAULT_SHOW_CROP_GRID));
+        mOverlayView.setCropGridRowCount(bundle.getInt(UCrop.Options.EXTRA_CROP_GRID_ROW_COUNT, OverlayViewNew.DEFAULT_CROP_GRID_ROW_COUNT));
+        mOverlayView.setCropGridColumnCount(bundle.getInt(UCrop.Options.EXTRA_CROP_GRID_COLUMN_COUNT, OverlayViewNew.DEFAULT_CROP_GRID_COLUMN_COUNT));
         mOverlayView.setCropGridColor(bundle.getInt(UCrop.Options.EXTRA_CROP_GRID_COLOR, getResources().getColor(R.color.ucrop_color_default_crop_grid)));
         mOverlayView.setCropGridStrokeWidth(bundle.getInt(UCrop.Options.EXTRA_CROP_GRID_STROKE_WIDTH, getResources().getDimensionPixelSize(R.dimen.ucrop_default_crop_grid_stoke_width)));
 
